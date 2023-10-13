@@ -12,11 +12,21 @@
     <div class="container mt-3">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+                @if(session('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                @if(session('error'))
+                    <div class="alert alert-danger" role="alert">
+                        {{ session('error') }}
+                    </div>
+                @endif
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h2>Add Student</h2>
+                    <h2 class="text-success">Add Student</h2>
                     <a href="{{ route('student_index') }}" class="btn btn-outline-success">All Students</a>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi delectus, maxime molestiae quis vitae?</p>
+                <h5 class="mb-4">This form allows you to add a new student's information to the database.</h5>
                 <form action="{{ route('student_store') }}" method="post">
                     @csrf
 
