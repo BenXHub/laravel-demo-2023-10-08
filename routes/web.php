@@ -19,18 +19,23 @@ Route::get('/', function () {
     return redirect(route('student_index'));
 });
 
-
 // list all students
-Route::get('/student/'    , [StudentController::class, 'index' ])->name('student_index');
-
+Route::get('/student/', [StudentController::class, 'index'])->name('student_index');
 
 // display create new student form.
-Route::get('/student/new' , [StudentController::class, 'create'])->name('student_create');
-
+Route::get('/student/new', [StudentController::class, 'create'])->name('student_create');
 
 // insert new student
-Route::post('/student/'   , [StudentController::class, 'store' ])->name('student_store');
-
+Route::post('/student/', [StudentController::class, 'store'])->name('student_store');
 
 // display single student record
-Route::get('/student/{id}', [StudentController::class, 'show'  ])->name('student_show');
+Route::get('/student/{id}', [StudentController::class, 'show'])->name('student_show');
+
+// display edit student form
+Route::get('/student/{id}/edit', [StudentController::class, 'edit'])->name('student_edit');
+
+// update student record
+Route::put('/student/{id}', [StudentController::class, 'update'])->name('student_update');
+
+// delete student record
+Route::delete('/student/{id}', [StudentController::class, 'destroy'])->name('student_destroy');
