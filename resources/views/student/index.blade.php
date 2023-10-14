@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 @if(session('success'))
-                    <div class="alert alert-danger" role="alert">
+                    <div class="alert alert-success" role="alert">
                         {{ session('success') }}
                     </div>
                 @endif
